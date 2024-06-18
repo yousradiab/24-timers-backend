@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -18,14 +19,14 @@ public class Hotel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToMany (mappedBy ="hotel", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JsonBackReference
-    private Set<Room> rooms = new HashSet<>();
-
     private String name;
     private String city;
     private int zip;
     private String country;
+
+    @OneToMany (mappedBy ="hotel", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonBackReference
+    private Set<Room> rooms = new HashSet<>();
 
     public Hotel(Set<Room> rooms, String name, String city, int zip, String country) {
         this.rooms = rooms;

@@ -5,21 +5,26 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
 public class Room {
+    @JsonManagedReference
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @ManyToOne
-    @JoinColumn(name = "hotel_id")
-    @JsonManagedReference
-    private Hotel hotel;
-
     private int roomNumber;
     private int numberOfBeds;
     private int price;
+    @ManyToOne
+    @JoinColumn(name = "hotel_id")
+    private Hotel hotel;
+
+    @OneToMany(mappedBy = "room", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private Set<Reservation> reservations = new HashSet<>();
+
 
 }

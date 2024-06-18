@@ -1,14 +1,11 @@
 package com.example.programmering2024.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -18,6 +15,19 @@ public class Reservation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private LocalDateTime reservationDate;
+    private LocalDate reservationDate;
     private int price;
+
+    @ManyToOne
+    @JoinColumn(name = "room_id")
+    private Room room;
+
+    @ManyToOne
+    @JoinColumn(name = "guest_id")
+    private Guest guest;
+
+    public Reservation(LocalDate reservationDate, int price) {
+        this.reservationDate = reservationDate;
+        this.price = price;
+    }
 }

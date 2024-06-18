@@ -1,12 +1,12 @@
 package com.example.programmering2024.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -22,6 +22,9 @@ public class Guest {
     private String lastname;
     private String email;
     private Double phoneNumber;
+
+    @OneToMany(mappedBy = "guest", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private Set<Reservation> reservations = new HashSet<>();
 
     public Guest(String username, String firstname, String lastname, String email, Double phoneNumber) {
 
