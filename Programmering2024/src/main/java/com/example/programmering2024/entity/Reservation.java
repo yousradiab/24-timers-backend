@@ -1,5 +1,6 @@
 package com.example.programmering2024.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,7 @@ public class Reservation {
     @JoinColumn(name = "room_id")
     private Room room;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "guest_id")
     private Guest guest;
