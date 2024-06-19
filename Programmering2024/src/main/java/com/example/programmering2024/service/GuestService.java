@@ -12,27 +12,19 @@ import java.util.stream.Collectors;
 
 @Service
 public class GuestService {
+
+    private final GuestRespository guestRespository;
+
+    public GuestService(GuestRespository guestRespository) {
+        this.guestRespository = guestRespository;
+    }
     /*
-    private final GuestRespository guestRespository;
-
-    public GuestService(GuestRespository guestRespository) {
-        this.guestRespository = guestRespository;
-    }
-
-
-    private final GuestRespository guestRespository;
-
-    public GuestService(GuestRespository guestRespository) {
-        this.guestRespository = guestRespository;
-    }
     public List<GuestDto> getAllGuests() {
         List<GuestDto> guests = GuestRespository.findAll();
         return guests.stream().map(a -> new GuestDto(a, false)).collect(Collectors.toList());
 
 
     }
-
-
 
     public GuestDto addGuest(GuestDto request) {
         if (request.getId() != null) {

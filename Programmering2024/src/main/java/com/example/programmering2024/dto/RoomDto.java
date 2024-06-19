@@ -11,11 +11,18 @@ import java.util.Set;
 @Data
 public class RoomDto {
 
+    private Long id;
     private int roomNumber;
     private int numberOfBeds;
     private int price;
-    private Hotel hotel;
-    private Set<Reservation> reservations;
+    private Long hotelId;
 
 
+    public RoomDto(Long id,int roomNumber, int numberOfBeds, int price, Long hotelId) {
+        this.id = id;
+        this.roomNumber = roomNumber;
+        this.numberOfBeds = numberOfBeds;
+        this.price = price;
+        this.hotelId = hotelId;
+    }
 }

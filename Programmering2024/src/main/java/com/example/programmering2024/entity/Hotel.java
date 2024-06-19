@@ -1,6 +1,5 @@
 package com.example.programmering2024.entity;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -8,7 +7,7 @@ import lombok.Setter;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
-import java.util.List;
+
 import java.util.Set;
 
 @Entity
@@ -27,9 +26,10 @@ public class Hotel {
     private String country;
 
 
-    @OneToMany (mappedBy ="hotel", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JsonBackReference
-    private Set<Room> rooms = new HashSet<>();
+    @OneToMany (mappedBy ="hotel", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private Set<Room> rooms;
+
     private LocalDateTime created;
     private LocalDateTime updated;
     public Hotel(String name, String city, String street, int zip, String country) {

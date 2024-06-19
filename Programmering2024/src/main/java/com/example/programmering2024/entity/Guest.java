@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
@@ -29,7 +28,7 @@ public class Guest {
     private LocalDateTime updated;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "guest", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "guest", cascade = CascadeType.ALL)
     private Set<Reservation> reservations = new HashSet<>();
 
     public Guest(String username, String firstname, String lastname, String email, Double phoneNumber) {
