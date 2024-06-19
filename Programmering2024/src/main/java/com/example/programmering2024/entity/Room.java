@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,5 +27,13 @@ public class Room {
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Reservation> reservations = new HashSet<>();
 
-
+    private LocalDateTime created;
+    private LocalDateTime updated;
+    public Room(int roomNumber, int numberOfBeds, int price) {
+        this.roomNumber = roomNumber;
+        this.numberOfBeds = numberOfBeds;
+        this.price = price;
+        this.created = LocalDateTime.now();
+        this.updated = LocalDateTime.now();
+    }
 }

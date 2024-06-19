@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,6 +25,8 @@ public class Guest {
     private String lastname;
     private String email;
     private Double phoneNumber;
+    private LocalDateTime created;
+    private LocalDateTime updated;
 
     @JsonManagedReference
     @OneToMany(mappedBy = "guest", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -35,6 +39,8 @@ public class Guest {
         this.lastname = lastname;
         this.email = email;
         this.phoneNumber = phoneNumber;
-    }
+        this.created = LocalDateTime.now();
+        this.updated = LocalDateTime.now();
+    };
 
 }

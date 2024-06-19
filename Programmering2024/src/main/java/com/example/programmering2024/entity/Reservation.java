@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Getter
@@ -16,6 +17,8 @@ public class Reservation {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private LocalDate reservationDate;
     private int price;
 
@@ -28,8 +31,15 @@ public class Reservation {
     @JoinColumn(name = "guest_id")
     private Guest guest;
 
-    public Reservation(LocalDate reservationDate, int price) {
+    private LocalDateTime created;
+    private LocalDateTime updated;
+
+    public Reservation(LocalDate reservationDate, int price, Room room, Guest guest) {
         this.reservationDate = reservationDate;
         this.price = price;
+        this.room = room;
+        this.guest = guest;
+        this.created = created;
+        this.updated = updated;
     }
 }
