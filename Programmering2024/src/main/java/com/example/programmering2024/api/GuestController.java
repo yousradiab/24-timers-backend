@@ -17,20 +17,4 @@ public class GuestController {
         this.guestService = guestService;
     }
 
-
-    @GetMapping
-    public List<Guest> getGuests() {
-        List<Guest> lstGuests = guestService.getGuests();
-        return lstGuests;
-    }
-
-@GetMapping("/{id}")
-    public GuestDto getGuestById(@PathVariable long id) {
-
-}
-
-    @PostMapping
-    public GuestDto addGuest(@RequestBody GuestDto request) {
-        return GuestService.addGuest(request);
-    }
 }
