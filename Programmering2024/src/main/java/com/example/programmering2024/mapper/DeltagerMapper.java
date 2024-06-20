@@ -6,11 +6,13 @@ import com.example.programmering2024.dto.ResultatDto;
 import com.example.programmering2024.entity.Deltager;
 import com.example.programmering2024.entity.Disciplin;
 import com.example.programmering2024.entity.Resultat;
+import com.example.programmering2024.mapper.DisciplinMapper;
+import com.example.programmering2024.mapper.ResultatMapper;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class DeltagerMapper {
-
     public static DeltagerDto mapToDto(Deltager deltager) {
         if (deltager == null) {
             return null;

@@ -1,12 +1,16 @@
 package com.example.programmering2024.dto;
 
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.util.List;
 
 @NoArgsConstructor
 @Data
+@Getter
+@Setter
 public class DeltagerDto {
 
     private Long id;

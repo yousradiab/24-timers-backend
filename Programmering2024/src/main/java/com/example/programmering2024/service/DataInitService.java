@@ -34,9 +34,13 @@ public class DataInitService {
             List<Deltager> deltagere = new ArrayList<>();
             List<Disciplin> discipliner = createDiscipliner();
 
-            for (int i = 0; i <20; i++) {
-                String gender = (i % 2 == 0) ? "M" : "F";
-                Deltager deltager = new Deltager("Deltager" + i, gender, 20 + random.nextInt(10), "Klub" + i);
+            // Define a fixed list of clubs
+            String[] clubs = {"Klub1", "Klub2", "Klub3", "Klub4", "Klub5"};
+
+            for (int i = 0; i < 20; i++) {
+                String gender = (i % 2 == 0) ? "M" : "K";
+                String club = clubs[random.nextInt(clubs.length)];
+                Deltager deltager = new Deltager("Deltager" + i, gender, 10 + random.nextInt(50), club);
 
                 int numberOfDisciplines = 1 + random.nextInt(discipliner.size());
                 for (int j = 0; j < numberOfDisciplines; j++) {
@@ -50,8 +54,8 @@ public class DataInitService {
                 for (Disciplin disciplin : deltager.getDiscipliner()) {
                     String resultatType = disciplin.getResultatType();
                     for (int k = 0; k < 2; k++) {
-                        String resultatVaerdi = String.valueOf(random.nextInt(100));
-                        Resultat resultat = new Resultat(resultatType, new Date(), resultatVaerdi, deltager, disciplin);
+                        String resultatVaerdi = String.valueOf(random.nextInt(50));
+                        Resultat resultat = new Resultat(resultatType, new Date(), resultatVaerdi, null, deltager, disciplin);
                         resultat = resultatRepository.save(resultat);
                         resultater.add(resultat);
                     }

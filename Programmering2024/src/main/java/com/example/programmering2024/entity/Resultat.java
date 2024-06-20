@@ -21,6 +21,8 @@ public class Resultat {
     private String resultatType;
     private Date dato;
     private String resultatVaerdi;
+    private String formattedResult;
+
 
     @ManyToOne
     @JoinColumn(name = "deltager_id", nullable = false)
@@ -30,10 +32,11 @@ public class Resultat {
     @JoinColumn(name = "disciplin_id", nullable = false)
     private Disciplin disciplin;
 
-    public Resultat(String resultatType, Date dato, String resultatVaerdi, Deltager deltager, Disciplin disciplin) {
+    public Resultat(String resultatType, Date dato, String resultatVaerdi,String formattedResult, Deltager deltager, Disciplin disciplin) {
         this.resultatType = resultatType;
         this.dato = dato;
         this.resultatVaerdi = resultatVaerdi;
+        this.formattedResult = formattedResult;
         this.deltager = deltager;
         this.disciplin = disciplin;
     }
