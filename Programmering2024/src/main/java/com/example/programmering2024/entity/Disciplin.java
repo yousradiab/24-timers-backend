@@ -32,6 +32,7 @@ public class Disciplin {
         this.resultatType = resultatType;
     }
 
+
     public void addResultat(Resultat resultat) {
         this.resultater.add(resultat);
         resultat.setDisciplin(this);

@@ -26,17 +26,10 @@ public class DeltagerController {
     }
 
 
-    @PostMapping("/addDeltager")
+    @PostMapping("/createdeltager")
     public DeltagerDto addDeltager(@RequestBody DeltagerDto request) {
         return deltagerService.addDeltager(request);
     }
-/*
-    @GetMapping("/hotel/{id}")
-    public HotelDto getHotelById(@PathVariable Long id) {
-        return hotelService.getHotelById(id);
 
-    }
-
- */
 
 }

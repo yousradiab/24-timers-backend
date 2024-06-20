@@ -34,7 +34,7 @@ public class DataInitService {
             List<Deltager> deltagere = new ArrayList<>();
             List<Disciplin> discipliner = createDiscipliner();
 
-            for (int i = 0; i < 250; i++) {
+            for (int i = 0; i <20; i++) {
                 String gender = (i % 2 == 0) ? "M" : "F";
                 Deltager deltager = new Deltager("Deltager" + i, gender, 20 + random.nextInt(10), "Klub" + i);
 
