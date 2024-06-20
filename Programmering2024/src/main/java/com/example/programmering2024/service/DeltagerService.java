@@ -75,10 +75,15 @@ public class DeltagerService {
         deltager.setKon(deltagerDto.getKon());
         deltager.setAlder(deltagerDto.getAlder());
         deltager.setKlub(deltagerDto.getKlub());
-        deltager.setDiscipliner(deltagerDto.getDiscipliner().stream()
-                .map(DisciplinMapper::mapToEntity).collect(Collectors.toList()));
-        deltager.setResultater(deltagerDto.getResultater().stream()
-                .map(ResultatMapper::mapToEntity).collect(Collectors.toList()));
+
+        deltager.getDiscipliner().clear();
+        for (DisciplinDto disciplinDto : deltagerDto.getDiscipliner()) {
+            Optional<Disciplin> disciplin = disciplinRepository.findByNavn(disciplinDto.getNavn());
+            if (disciplin.isEmpty()) {
+                throw new RuntimeException("Disciplin not found: " + disciplinDto.getNavn());
+            }
+            deltager.addDisciplin(disciplin.get());
+        }
 
         Deltager updatedDeltager = deltagerRepository.save(deltager);
         return DeltagerMapper.mapToDto(updatedDeltager);
