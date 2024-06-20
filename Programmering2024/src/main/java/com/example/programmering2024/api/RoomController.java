@@ -1,6 +1,5 @@
-package com.example.programmering2024.api;
+/*package com.example.programmering2024.api;
 
-import com.example.programmering2024.service.RoomService;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -11,3 +10,6 @@ public class RoomController {
         this.roomService = roomService;
     }
 }
+
+
+ */

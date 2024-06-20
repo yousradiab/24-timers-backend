@@ -1,45 +1,82 @@
 package com.example.programmering2024.service;
 
-import com.example.programmering2024.entity.Hotel;
-import com.example.programmering2024.entity.Room;
-import com.example.programmering2024.repository.HotelRepository;
-import com.example.programmering2024.repository.RoomRepository;
+import com.example.programmering2024.entity.Deltager;
+import com.example.programmering2024.entity.Disciplin;
+import com.example.programmering2024.entity.Resultat;
+import com.example.programmering2024.repository.DeltagerRepository;
+import com.example.programmering2024.repository.DisciplinRepository;
+import com.example.programmering2024.repository.ResultatRepository;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Random;
 
 @Service
 public class DataInitService {
 
-    private final HotelRepository hotelRepository;
-    private final RoomRepository roomRepository;
+    private final DeltagerRepository deltagerRepository;
+    private final DisciplinRepository disciplinRepository;
+    private final ResultatRepository resultatRepository;
 
-    public DataInitService(HotelRepository hotelRepository, RoomRepository roomRepository) {
-        this.hotelRepository = hotelRepository;
-        this.roomRepository = roomRepository;
+    public DataInitService(DeltagerRepository deltagerRepository, DisciplinRepository disciplinRepository, ResultatRepository resultatRepository) {
+        this.deltagerRepository = deltagerRepository;
+        this.disciplinRepository = disciplinRepository;
+        this.resultatRepository = resultatRepository;
     }
-@PostConstruct
+
+    @PostConstruct
     public void init() {
-        //tilføj data
-        Random random = new Random();
-        List<Hotel> hotels = new ArrayList<Hotel>();
-        for (int i = 0; i < 250; i++) {
-            Hotel hotel = new Hotel("Hotel" + i, "city" + i, "street" + i, 1000 + i, "country" + i);
-            hotelRepository.save(hotel);
+        try {
+            Random random = new Random();
+            List<Deltager> deltagere = new ArrayList<>();
+            List<Disciplin> discipliner = createDiscipliner();
 
-            Set<Room> rooms = new HashSet<Room>();
-            for (int j = 0; j < 10; j++) {
-                Room room = new Room(1 + j, random.nextInt(4) + 1, random.nextInt(1000) + 500);
-                room.setHotel(hotel);
-                rooms.add(room);
-            };
-            hotel.setRooms(rooms);
-            hotels.add(hotel);
+            for (int i = 0; i < 250; i++) {
+                String gender = (i % 2 == 0) ? "M" : "F";
+                Deltager deltager = new Deltager("Deltager" + i, gender, 20 + random.nextInt(10), "Klub" + i);
 
+                int numberOfDisciplines = 1 + random.nextInt(discipliner.size());
+                for (int j = 0; j < numberOfDisciplines; j++) {
+                    Disciplin disciplin = discipliner.get(random.nextInt(discipliner.size()));
+                    deltager.addDisciplin(disciplin);
+                }
 
+                deltager = deltagerRepository.save(deltager);
+
+                List<Resultat> resultater = new ArrayList<>();
+                for (Disciplin disciplin : deltager.getDiscipliner()) {
+                    String resultatType = disciplin.getResultatType();
+                    for (int k = 0; k < 2; k++) {
+                        String resultatVaerdi = String.valueOf(random.nextInt(100));
+                        Resultat resultat = new Resultat(resultatType, new Date(), resultatVaerdi, deltager, disciplin);
+                        resultat = resultatRepository.save(resultat);
+                        resultater.add(resultat);
+                    }
+                }
+                deltager.setResultater(resultater);
+                deltagere.add(deltager);
+            }
+
+            deltagerRepository.saveAll(deltagere);
+        } catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to initialize data", e);
         }
-        hotelRepository.saveAll(hotels);
-    }
     }
 
+    private List<Disciplin> createDiscipliner() {
+        List<Disciplin> discipliner = new ArrayList<>();
+        String[] disciplineNames = {"100m løb", "Diskoskast", "Trespring", "Højdespring", "Spydkast"};
+        String[] resultatTypes = {"Tid", "Afstand", "Point"};
+
+        for (int i = 0; i < disciplineNames.length; i++) {
+            Disciplin disciplin = new Disciplin(disciplineNames[i], resultatTypes[i % resultatTypes.length]);
+            disciplin = disciplinRepository.save(disciplin);
+            discipliner.add(disciplin);
+        }
+        return discipliner;
+    }
+}

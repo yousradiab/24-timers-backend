@@ -1,4 +1,4 @@
-package com.example.programmering2024.api;
+/*package com.example.programmering2024.api;
 
 import com.example.programmering2024.repository.ReservationRepository;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,3 +11,6 @@ public class ReservationController {
         this.reservationRepository = reservationRepository;
     }
 }
+
+
+ */
