@@ -42,7 +42,6 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.Programmering2024Application.executor": "Run",
-    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -95,7 +94,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1719228464609</updated>
-      <workItem from="1719228466346" duration="513000" />
+      <workItem from="1719228466346" duration="826000" />
     </task>
     <servers />
   </component>
