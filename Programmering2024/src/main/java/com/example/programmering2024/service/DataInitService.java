@@ -11,8 +11,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 @Service
 public class DataInitService {
@@ -34,7 +36,7 @@ public class DataInitService {
             List<Deltager> deltagere = new ArrayList<>();
             List<Disciplin> discipliner = createDiscipliner();
 
-            // Define a fixed list of clubs
+            // Definer en fast liste over klubber
             String[] clubs = {"Klub1", "Klub2", "Klub3", "Klub4", "Klub5"};
 
             for (int i = 0; i < 20; i++) {
@@ -42,9 +44,14 @@ public class DataInitService {
                 String club = clubs[random.nextInt(clubs.length)];
                 Deltager deltager = new Deltager("Deltager" + i, gender, 10 + random.nextInt(50), club);
 
+                Set<Disciplin> tildelteDiscipliner = new HashSet<>();
                 int numberOfDisciplines = 1 + random.nextInt(discipliner.size());
                 for (int j = 0; j < numberOfDisciplines; j++) {
-                    Disciplin disciplin = discipliner.get(random.nextInt(discipliner.size()));
+                    Disciplin disciplin;
+                    do {
+                        disciplin = discipliner.get(random.nextInt(discipliner.size()));
+                    } while (tildelteDiscipliner.contains(disciplin));
+                    tildelteDiscipliner.add(disciplin);
                     deltager.addDisciplin(disciplin);
                 }
 
@@ -52,10 +59,9 @@ public class DataInitService {
 
                 List<Resultat> resultater = new ArrayList<>();
                 for (Disciplin disciplin : deltager.getDiscipliner()) {
-                    String resultatType = disciplin.getResultatType();
                     for (int k = 0; k < 2; k++) {
-                        String resultatVaerdi = String.valueOf(random.nextInt(50));
-                        Resultat resultat = new Resultat(resultatType, new Date(), resultatVaerdi, null, deltager, disciplin);
+                        String resultatVaerdi = String.valueOf(random.nextInt(50)); // Uformateret resultatværdi
+                        Resultat resultat = new Resultat(disciplin.getResultatType(), new Date(), resultatVaerdi, null, deltager, disciplin);
                         resultat = resultatRepository.save(resultat);
                         resultater.add(resultat);
                     }

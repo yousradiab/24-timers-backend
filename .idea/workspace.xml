@@ -4,11 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aedc6d63-cf90-44d5-9b85-ba806d61b1e7" name="Changes" comment="" />
+    <list default="true" id="aedc6d63-cf90-44d5-9b85-ba806d61b1e7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Programmering2024/src/test/java/com/example/programmering2024/api/DeltagerControllerIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Programmering2024/src/test/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmering2024/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/api/ReservationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/api/ResultatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/api/ResultatController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/api/RoomController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/config/InitData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/dto/DeltagerDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/dto/DeltagerDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/mapper/RoomMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/DataInitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/DataInitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/DeltagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/DeltagerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/GuestService.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -20,9 +43,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2iK9a88LpCkDT0nzKXex9q0cYID" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -35,6 +58,8 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "JUnit.DeltagerControllerIntegrationTest.executor": "Run",
+    "JUnit.Programmering2024ApplicationTests.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -42,6 +67,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.Programmering2024Application.executor": "Run",
+    "git-widget-placeholder": "refactor",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -51,16 +77,23 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.programmering2024.api" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Programmering2024Application">
+    <configuration name="DeltagerControllerIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Programmering2024" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="Programmering2024" />
-      <option name="filePath" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.programmering2024.api.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.programmering2024.api" />
+      <option name="MAIN_CLASS_NAME" value="com.example.programmering2024.api.DeltagerControllerIntegrationTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -77,6 +110,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.DeltagerControllerIntegrationTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -95,6 +133,7 @@
       <option name="presentableId" value="Default" />
       <updated>1719228464609</updated>
       <workItem from="1719228466346" duration="826000" />
+      <workItem from="1719229323519" duration="12049000" />
     </task>
     <servers />
   </component>
@@ -103,5 +142,15 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalStateException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

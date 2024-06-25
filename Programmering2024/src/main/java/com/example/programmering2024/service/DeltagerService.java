@@ -31,6 +31,8 @@ public class DeltagerService {
     }
     public DeltagerDto addDeltager(DeltagerDto deltagerDto) {
         try {
+            //mapToEntity statisk derfor kan den kaldes uden for klassen.
+
             Deltager deltager = DeltagerMapper.mapToEntity(deltagerDto);
 
             // Clear results as they should not be added when creating a new participant

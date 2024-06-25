@@ -30,6 +30,11 @@ public class DeltagerDto {
         this.discipliner = discipliner;
         this.resultater = resultater;
     }
-}
+
+    public DeltagerDto(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+ }
 
 

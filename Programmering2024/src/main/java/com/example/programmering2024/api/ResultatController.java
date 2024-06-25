@@ -1,4 +1,4 @@
-package com.example.programmering2024.controller;
+package com.example.programmering2024.api;
 
 import com.example.programmering2024.dto.ResultatDto;
 import com.example.programmering2024.service.ResultatService;
