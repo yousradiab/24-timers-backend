@@ -35,33 +35,32 @@ public class ResultatService {
         Disciplin disciplin = disciplinRepository.findById(resultatDto.getDisciplin().getId())
                 .orElseThrow(() -> new RuntimeException("Disciplin not found"));
 
-        Resultat resultat = new Resultat();
-        resultat.setFormattedResult(resultatDto.getFormattedResult());
-        resultat.setDato(resultatDto.getDato());
-        resultat.setDeltager(deltager);
-        resultat.setDisciplin(disciplin);
+        Resultat nytResultat = ResultatMapper.mapToEntity(resultatDto);
+        nytResultat.setDisciplin(disciplin);
+        nytResultat.setDeltager(deltager);
 
-        Resultat savedResultat = resultatRepository.save(resultat);
+
+        Resultat savedResultat = resultatRepository.save(nytResultat);
         return ResultatMapper.mapToDto(savedResultat);
     }
 
     @Transactional
     public void registerMultipleResults(List<ResultatDto> resultaterDto) {
-        List<Resultat> resultater = resultaterDto.stream().map(dto -> {
+
+        for (ResultatDto dto : resultaterDto) {
+
+
             Deltager deltager = deltagerRepository.findById(dto.getDeltager().getId())
                     .orElseThrow(() -> new RuntimeException("Deltager not found"));
 
             Disciplin disciplin = disciplinRepository.findById(dto.getDisciplin().getId())
                     .orElseThrow(() -> new RuntimeException("Disciplin not found"));
 
-            Resultat resultat = new Resultat();
-            resultat.setFormattedResult(dto.getFormattedResult());
-            resultat.setDato(dto.getDato());
-            resultat.setDeltager(deltager);
-            resultat.setDisciplin(disciplin);
-            return resultat;
-        }).collect(Collectors.toList());
+                Resultat nytResultat = ResultatMapper.mapToEntity(dto);
+                nytResultat.setDisciplin(disciplin);
+                nytResultat.setDeltager(deltager);
+                resultatRepository.save(nytResultat);
 
-        resultatRepository.saveAll(resultater);
+    }
     }
 }
