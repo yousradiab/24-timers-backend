@@ -44,32 +44,33 @@ public class ResultatService {
         Disciplin disciplin = disciplinRepository.findById(resultatDto.getDisciplin().getId())
                 .orElseThrow(() -> new RuntimeException("Disciplin not found"));
 
-        Resultat nytResultat = ResultatMapper.mapToEntity(resultatDto);
-        nytResultat.setDisciplin(disciplin);
-        nytResultat.setDeltager(deltager);
+        Resultat resultat = new Resultat();
+        resultat.setFormattedResult(resultatDto.getFormattedResult());
+        resultat.setDato(resultatDto.getDato());
+        resultat.setDeltager(deltager);
+        resultat.setDisciplin(disciplin);
 
-
-        Resultat savedResultat = resultatRepository.save(nytResultat);
+        Resultat savedResultat = resultatRepository.save(resultat);
         return ResultatMapper.mapToDto(savedResultat);
     }
 
     @Transactional
     public void registerMultipleResults(List<ResultatDto> resultaterDto) {
-
-        for (ResultatDto dto : resultaterDto) {
-
-
+        List<Resultat> resultater = resultaterDto.stream().map(dto -> {
             Deltager deltager = deltagerRepository.findById(dto.getDeltager().getId())
                     .orElseThrow(() -> new RuntimeException("Deltager not found"));
 
             Disciplin disciplin = disciplinRepository.findById(dto.getDisciplin().getId())
                     .orElseThrow(() -> new RuntimeException("Disciplin not found"));
 
-                Resultat nytResultat = ResultatMapper.mapToEntity(dto);
-                nytResultat.setDisciplin(disciplin);
-                nytResultat.setDeltager(deltager);
-                resultatRepository.save(nytResultat);
+            Resultat resultat = new Resultat();
+            resultat.setFormattedResult(dto.getFormattedResult());
+            resultat.setDato(dto.getDato());
+            resultat.setDeltager(deltager);
+            resultat.setDisciplin(disciplin);
+            return resultat;
+        }).collect(Collectors.toList());
 
-    }
+        resultatRepository.saveAll(resultater);
     }
 }

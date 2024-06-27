@@ -11,12 +11,15 @@
       <change afterPath="$PROJECT_DIR$/Programmering2024/src/test/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/api/ResultatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/api/ResultatController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/entity/Resultat.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/entity/Resultat.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/repository/ResultatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/repository/ResultatRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/DataInitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/DataInitService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/ResultatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/ResultatService.java" afterDir="false" />
 =======
+=======
+>>>>>>> parent of 21428cd (ressultat virker i backend)
       <change beforePath="$PROJECT_DIR$/Programmering2024/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/api/ReservationController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/api/ResultatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/api/ResultatController.java" afterDir="false" />
@@ -27,6 +30,9 @@
       <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/DataInitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/DataInitService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/DeltagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/DeltagerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/GuestService.java" beforeDir="false" />
+<<<<<<< HEAD
+>>>>>>> parent of 21428cd (ressultat virker i backend)
+=======
 >>>>>>> parent of 21428cd (ressultat virker i backend)
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +148,11 @@
       <updated>1719228464609</updated>
       <workItem from="1719228466346" duration="826000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1719229323519" duration="32437000" />
+=======
+      <workItem from="1719229323519" duration="12049000" />
+>>>>>>> parent of 21428cd (ressultat virker i backend)
 =======
       <workItem from="1719229323519" duration="12049000" />
 >>>>>>> parent of 21428cd (ressultat virker i backend)

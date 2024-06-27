@@ -1,8 +1,11 @@
 package com.example.programmering2024.entity;
 
+<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+=======
+>>>>>>> parent of 21428cd (ressultat virker i backend)
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,7 +32,6 @@ public class Resultat {
 
 
     @ManyToOne
-    @JsonBackReference
     @JoinColumn(name = "deltager_id", nullable = false)
     private Deltager deltager;
 

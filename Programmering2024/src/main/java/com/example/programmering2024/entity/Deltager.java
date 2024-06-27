@@ -1,6 +1,5 @@
 package com.example.programmering2024.entity;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -33,7 +32,6 @@ public class Deltager {
     private List<Disciplin> discipliner = new ArrayList<>();
 
     @OneToMany(mappedBy = "deltager", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
     private List<Resultat> resultater = new ArrayList<>();
 
     public Deltager(String navn, String kon, int alder, String klub) {

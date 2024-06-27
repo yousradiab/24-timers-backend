@@ -31,9 +31,9 @@ public class ResultatMapper {
         Resultat resultat = new Resultat();
         resultat.setId(dto.getId());
         resultat.setResultatType(dto.getResultatType());
-        resultat.setResultatVaerdi(dto.getResultatVaerdi());
-        resultat.setFormattedResult(resultat.getFormattedResult());
         resultat.setDato(dto.getDato());
+        resultat.setResultatVaerdi(dto.getResultatVaerdi());
+        resultat.setFormattedResult(dto.getFormattedResult());
         resultat.setDisciplin(DisciplinMapper.mapToEntity(dto.getDisciplin()));
 
         return resultat;
