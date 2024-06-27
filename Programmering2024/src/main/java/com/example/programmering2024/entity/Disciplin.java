@@ -33,13 +33,4 @@ public class Disciplin {
     }
 
 
-    public void addResultat(Resultat resultat) {
-        this.resultater.add(resultat);
-        resultat.setDisciplin(this);
-    }
-
-    public void removeResultat(Resultat resultat) {
-        this.resultater.remove(resultat);
-        resultat.setDisciplin(null);
-    }
 }

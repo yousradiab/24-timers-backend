@@ -48,18 +48,5 @@ public class Deltager {
         disciplin.getDeltagere().add(this);
     }
 
-    public void removeDisciplin(Disciplin disciplin) {
-        this.discipliner.remove(disciplin);
-        disciplin.getDeltagere().remove(this);
-    }
 
-    public void addResultat(Resultat resultat) {
-        this.resultater.add(resultat);
-        resultat.setDeltager(this);
-    }
-
-    public void removeResultat(Resultat resultat) {
-        this.resultater.remove(resultat);
-        resultat.setDeltager(null);
-    }
 }

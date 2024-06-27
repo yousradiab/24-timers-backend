@@ -39,10 +39,17 @@ public class DataInitService {
             // Definer en fast liste over klubber
             String[] clubs = {"Klub1", "Klub2", "Klub3", "Klub4", "Klub5"};
 
+            // Definer lister over fornavne og efternavne
+            String[] fornavne = {"Anna", "Peter", "Lars", "Sofie", "Thomas", "Marie", "Jens", "Kirsten", "Hans", "Mette"};
+            String[] efternavne = {"Nielsen", "Hansen", "Jensen", "Pedersen", "Madsen", "Olsen", "Larsen", "Christensen", "Sørensen", "Rasmussen"};
+
             for (int i = 0; i < 20; i++) {
                 String gender = (i % 2 == 0) ? "M" : "K";
                 String club = clubs[random.nextInt(clubs.length)];
-                Deltager deltager = new Deltager("Deltager" + i, gender, 10 + random.nextInt(50), club);
+                String fornavn = fornavne[random.nextInt(fornavne.length)];
+                String efternavn = efternavne[random.nextInt(efternavne.length)];
+                String navn = fornavn + " " + efternavn;
+                Deltager deltager = new Deltager(navn, gender, 10 + random.nextInt(50), club);
 
                 Set<Disciplin> tildelteDiscipliner = new HashSet<>();
                 int numberOfDisciplines = 1 + random.nextInt(discipliner.size());
@@ -66,8 +73,7 @@ public class DataInitService {
                         resultat = resultatRepository.save(resultat);
                         resultater.add(resultat);
                     }
-                
-            }
+                }
                 deltager.setResultater(resultater);
                 deltagere.add(deltager);
             }
