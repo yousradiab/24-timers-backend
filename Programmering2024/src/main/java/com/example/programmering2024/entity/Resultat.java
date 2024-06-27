@@ -1,6 +1,8 @@
 package com.example.programmering2024.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +15,7 @@ import java.util.Date;
 @Getter
 @Setter
 @NoArgsConstructor
+
 public class Resultat {
 
     @Id
@@ -34,13 +37,14 @@ public class Resultat {
     @JoinColumn(name = "disciplin_id", nullable = false)
     private Disciplin disciplin;
 
-    public Resultat(String resultatType, Date dato, String resultatVaerdi,String formattedResult, Deltager deltager, Disciplin disciplin) {
+    public Resultat(String resultatType, Date dato, String resultatVaerdi, Deltager deltager, Disciplin disciplin) {
         this.resultatType = resultatType;
         this.dato = dato;
         this.resultatVaerdi = resultatVaerdi;
-        this.formattedResult = formattedResult;
+        this.formattedResult = getFormattedResult(); // Set formatted result during creation
         this.deltager = deltager;
         this.disciplin = disciplin;
+        System.out.println("Deltager: " + deltager.getNavn());
     }
 
     public String getFormattedResult() {

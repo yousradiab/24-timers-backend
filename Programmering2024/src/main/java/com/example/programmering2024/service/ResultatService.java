@@ -1,9 +1,11 @@
 package com.example.programmering2024.service;
 
+import com.example.programmering2024.dto.DeltagerDto;
 import com.example.programmering2024.dto.ResultatDto;
 import com.example.programmering2024.entity.Deltager;
 import com.example.programmering2024.entity.Disciplin;
 import com.example.programmering2024.entity.Resultat;
+import com.example.programmering2024.mapper.DeltagerMapper;
 import com.example.programmering2024.mapper.ResultatMapper;
 import com.example.programmering2024.repository.DeltagerRepository;
 import com.example.programmering2024.repository.DisciplinRepository;
@@ -25,6 +27,13 @@ public class ResultatService {
         this.resultatRepository = resultatRepository;
         this.deltagerRepository = deltagerRepository;
         this.disciplinRepository = disciplinRepository;
+    }
+
+    public List<ResultatDto> getAllResultater() {
+        List<Resultat> resultatList = resultatRepository.findAll();
+        return resultatList.stream()
+                .map(ResultatMapper::mapToDto)
+                .collect(Collectors.toList());
     }
 
     @Transactional

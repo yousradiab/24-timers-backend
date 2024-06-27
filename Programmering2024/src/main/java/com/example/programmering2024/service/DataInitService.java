@@ -9,12 +9,7 @@ import com.example.programmering2024.repository.ResultatRepository;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 @Service
 public class DataInitService {
@@ -39,10 +34,17 @@ public class DataInitService {
             // Definer en fast liste over klubber
             String[] clubs = {"Klub1", "Klub2", "Klub3", "Klub4", "Klub5"};
 
+            // Lister over fornavne og efternavne
+            String[] firstNames = {"Liam", "Emma", "Noah", "Olivia", "William", "Ava", "James", "Isabella", "Logan", "Sophia"};
+            String[] lastNames = {"Smith", "Johnson", "Williams", "Brown", "Jones", "Garcia", "Miller", "Davis", "Rodriguez", "Martinez"};
+
             for (int i = 0; i < 20; i++) {
+                String firstName = firstNames[random.nextInt(firstNames.length)];
+                String lastName = lastNames[random.nextInt(lastNames.length)];
+                String fullName = firstName + " " + lastName;
                 String gender = (i % 2 == 0) ? "M" : "K";
                 String club = clubs[random.nextInt(clubs.length)];
-                Deltager deltager = new Deltager("Deltager" + i, gender, 10 + random.nextInt(50), club);
+                Deltager deltager = new Deltager(fullName, gender, 10 + random.nextInt(50), club);
 
                 Set<Disciplin> tildelteDiscipliner = new HashSet<>();
                 int numberOfDisciplines = 1 + random.nextInt(discipliner.size());
@@ -61,7 +63,7 @@ public class DataInitService {
                 for (Disciplin disciplin : deltager.getDiscipliner()) {
                     for (int k = 0; k < 2; k++) {
                         String resultatVaerdi = String.valueOf(random.nextInt(50)); // Uformateret resultatværdi
-                        Resultat resultat = new Resultat(disciplin.getResultatType(), new Date(), resultatVaerdi, null, deltager, disciplin);
+                        Resultat resultat = new Resultat(disciplin.getResultatType(), new Date(), resultatVaerdi, deltager, disciplin);
                         resultat = resultatRepository.save(resultat);
                         resultater.add(resultat);
                     }

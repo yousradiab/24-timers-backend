@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="aedc6d63-cf90-44d5-9b85-ba806d61b1e7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/entity/Deltager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/entity/Deltager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/api/ResultatController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/api/ResultatController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/entity/Resultat.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/entity/Resultat.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/mapper/ResultatMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/mapper/ResultatMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/repository/ResultatRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/repository/ResultatRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/DataInitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/DataInitService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/ResultatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/ResultatService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -123,7 +124,7 @@
       <option name="presentableId" value="Default" />
       <updated>1719228464609</updated>
       <workItem from="1719228466346" duration="826000" />
-      <workItem from="1719229323519" duration="18518000" />
+      <workItem from="1719229323519" duration="32437000" />
     </task>
     <servers />
   </component>
