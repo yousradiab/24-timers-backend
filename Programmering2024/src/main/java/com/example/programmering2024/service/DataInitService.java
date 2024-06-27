@@ -60,12 +60,14 @@ public class DataInitService {
                 List<Resultat> resultater = new ArrayList<>();
                 for (Disciplin disciplin : deltager.getDiscipliner()) {
                     for (int k = 0; k < 2; k++) {
-                        String resultatVaerdi = String.valueOf(random.nextInt(50)); // Uformateret resultatværdi
-                        Resultat resultat = new Resultat(disciplin.getResultatType(), new Date(), resultatVaerdi, null, deltager, disciplin);
+                        String resultatVaerdi = String.valueOf(random.nextInt(500)); // Uformateret resultatværdi
+                        Resultat resultat = new Resultat(disciplin.getResultatType(), new Date(), resultatVaerdi, deltager, disciplin);
+                        resultat.setFormattedResult(resultat.getFormattedResult());
                         resultat = resultatRepository.save(resultat);
                         resultater.add(resultat);
                     }
-                }
+                
+            }
                 deltager.setResultater(resultater);
                 deltagere.add(deltager);
             }

@@ -34,13 +34,13 @@ public class Resultat {
     @JoinColumn(name = "disciplin_id", nullable = false)
     private Disciplin disciplin;
 
-    public Resultat(String resultatType, Date dato, String resultatVaerdi,String formattedResult, Deltager deltager, Disciplin disciplin) {
+    public Resultat(String resultatType, Date dato, String resultatVaerdi, Deltager deltager, Disciplin disciplin) {
         this.resultatType = resultatType;
         this.dato = dato;
         this.resultatVaerdi = resultatVaerdi;
-        this.formattedResult = formattedResult;
         this.deltager = deltager;
         this.disciplin = disciplin;
+        this.formattedResult = getFormattedResult();
     }
 
     public String getFormattedResult() {

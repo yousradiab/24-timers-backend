@@ -18,7 +18,7 @@ public class ResultatMapper {
                 resultat.getDato(),
                 resultat.getResultatVaerdi(),
                 resultat.getFormattedResult(),
-                null,  // Avoid recursive mapping
+                null,// Map Deltager
                 DisciplinMapper.mapToDto(resultat.getDisciplin())
         );
     }
@@ -35,6 +35,7 @@ public class ResultatMapper {
         resultat.setFormattedResult(resultat.getFormattedResult());
         resultat.setDato(dto.getDato());
         resultat.setDisciplin(DisciplinMapper.mapToEntity(dto.getDisciplin()));
+        resultat.setDeltager(DeltagerMapper.mapToEntity(dto.getDeltager()));  // Set Deltager
 
         return resultat;
     }

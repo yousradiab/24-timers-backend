@@ -27,40 +27,33 @@ public class ResultatService {
         this.disciplinRepository = disciplinRepository;
     }
 
+    public List<ResultatDto> getAllResultater() {
+        List<Resultat> resultatList = resultatRepository.findAll();
+        return resultatList.stream()
+                .map(ResultatMapper::mapToDto)
+                .collect(Collectors.toList());
+    }
+
+
     @Transactional
     public ResultatDto registerSingleResult(ResultatDto resultatDto) {
         Deltager deltager = deltagerRepository.findById(resultatDto.getDeltager().getId())
                 .orElseThrow(() -> new RuntimeException("Deltager not found"));
+        System.out.println(deltager.toString());
 
         Disciplin disciplin = disciplinRepository.findById(resultatDto.getDisciplin().getId())
                 .orElseThrow(() -> new RuntimeException("Disciplin not found"));
+        System.out.println(disciplin.toString());
 
-        Resultat nytResultat = ResultatMapper.mapToEntity(resultatDto);
-        nytResultat.setDisciplin(disciplin);
-        nytResultat.setDeltager(deltager);
+        // Use the mapper to convert the DTO to an entity
+        Resultat resultat = ResultatMapper.mapToEntity(resultatDto);
+        System.out.println(resultat.toString());
+        resultat.setDeltager(deltager);
+        resultat.setDisciplin(disciplin);
+        resultat.setFormattedResult(resultat.getFormattedResult()); // Ensure formattedResult is set
 
-
-        Resultat savedResultat = resultatRepository.save(nytResultat);
+        Resultat savedResultat = resultatRepository.save(resultat);
         return ResultatMapper.mapToDto(savedResultat);
     }
 
-    @Transactional
-    public void registerMultipleResults(List<ResultatDto> resultaterDto) {
-
-        for (ResultatDto dto : resultaterDto) {
-
-
-            Deltager deltager = deltagerRepository.findById(dto.getDeltager().getId())
-                    .orElseThrow(() -> new RuntimeException("Deltager not found"));
-
-            Disciplin disciplin = disciplinRepository.findById(dto.getDisciplin().getId())
-                    .orElseThrow(() -> new RuntimeException("Disciplin not found"));
-
-                Resultat nytResultat = ResultatMapper.mapToEntity(dto);
-                nytResultat.setDisciplin(disciplin);
-                nytResultat.setDeltager(deltager);
-                resultatRepository.save(nytResultat);
-
-    }
-    }
 }
