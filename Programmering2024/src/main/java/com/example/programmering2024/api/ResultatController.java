@@ -30,6 +30,7 @@ public class ResultatController {
             ResultatDto savedResult = resultatService.registerSingleResult(resultatDto);
             return new ResponseEntity<>(savedResult, HttpStatus.CREATED);
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

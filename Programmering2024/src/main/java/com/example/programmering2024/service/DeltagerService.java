@@ -5,15 +5,12 @@ import com.example.programmering2024.dto.DisciplinDto;
 import com.example.programmering2024.entity.Deltager;
 import com.example.programmering2024.entity.Disciplin;
 import com.example.programmering2024.mapper.DeltagerMapper;
-import com.example.programmering2024.mapper.DisciplinMapper;
-import com.example.programmering2024.mapper.ResultatMapper;
 import com.example.programmering2024.repository.DeltagerRepository;
 import com.example.programmering2024.repository.DisciplinRepository;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;

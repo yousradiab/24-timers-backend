@@ -18,7 +18,7 @@ public class ResultatMapper {
                 resultat.getDato(),
                 resultat.getResultatVaerdi(),
                 resultat.getFormattedResult(),
-                null,// Map Deltager
+                null,
                 DisciplinMapper.mapToDto(resultat.getDisciplin())
         );
     }
