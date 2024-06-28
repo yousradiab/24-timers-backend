@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aedc6d63-cf90-44d5-9b85-ba806d61b1e7" name="Changes" comment="" />
+    <list default="true" id="aedc6d63-cf90-44d5-9b85-ba806d61b1e7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/api/DeltagerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/api/DeltagerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/DeltagerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Programmering2024/src/main/java/com/example/programmering2024/service/DeltagerService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -118,7 +122,7 @@
       <updated>1719228464609</updated>
       <workItem from="1719228466346" duration="826000" />
       <workItem from="1719229323519" duration="43782000" />
-      <workItem from="1719520589651" duration="6507000" />
+      <workItem from="1719520589651" duration="9926000" />
     </task>
     <servers />
   </component>
